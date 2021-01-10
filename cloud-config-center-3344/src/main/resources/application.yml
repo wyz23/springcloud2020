@@ -1,9 +1,11 @@
 server:
   port: 3344
 #cmd 执行： curl -X POST "http://localhost:3344/actuator/bus-refresh"
+#定点通知，只通知3355;  bus-refresh后跟的是目的地，即：微服务名称+端口号：config-client:3355
+#cmd 执行： curl -X POST "http://localhost:3344/actuator/bus-refresh/config-client:3355"
 spring:
   application:
-    name:  cloud-config-center #注册进Eureka服务器的微服务名
+    name:  cloud-config-center #注册进Eureka服务器的微服务名称
   cloud:
     config:
       server:
